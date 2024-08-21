@@ -1,5 +1,7 @@
+const localServer = 'http://190.110.54.245:8090'
+const prodServer = 'https://v2.accounts.marbust.com';
 function loadQuestions(gender) {
-    fetch(`http://190.110.54.245:8090/api/mbrelax/questions/${gender}`)
+    return fetch(`${prodServer}/api/mbrelax/questions/${gender}`)
         .then(response => response.json())
         .then(json => {
             const QuestionsDisplayer = document.getElementById("questions-ctnr");
@@ -35,7 +37,16 @@ window.onload = function () {
         if (selectedGender) {
             document.getElementById("genderPhase").style.display = "none";
             document.getElementById("personalDataPhase").style.display = "block";
-            loadQuestions(selectedGender.value);
+            document.getElementById("spinner").style.display = "block";
+
+            document.querySelector("main").classList.add("spinner-active");
+            
+            loadQuestions(selectedGender.value)
+                .finally(() => {
+                    // Ocultar el spinner después de cargar las preguntas
+                    document.getElementById("spinner").style.display = "none";
+                    document.querySelector("main").classList.remove("spinner-active");
+                });
         } else {
             alert("Por favor seleccione su género.");
         }
@@ -67,8 +78,9 @@ window.onload = function () {
         };
 
         document.getElementById("spinner").style.display = "block";
+        document.querySelector("main").classList.add("spinner-active");
 
-        fetch('http://localhost:3000/api/mbrelax/calculate', {
+        fetch(`${prodServer}/api/mbrelax/calculate`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -102,6 +114,7 @@ window.onload = function () {
         .finally(() => {
             // Ocultar el spinner
             document.getElementById("spinner").style.display = "none";
+            document.querySelector("main").classList.remove("spinner-active");
         });
     });
 

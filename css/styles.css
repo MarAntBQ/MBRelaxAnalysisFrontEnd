@@ -41649,7 +41649,26 @@ body {
   scrollbar-color: #4F772D #90A955;
 }
 body main {
+  transition: 0.3s;
   margin-top: 70px;
+}
+body main.spinner-active {
+  position: relative;
+  pointer-events: none;
+}
+body main.spinner-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+body main.spinner-active * {
+  position: relative;
+  z-index: 0;
 }
 body main .page-section {
   padding: 64px 10%;

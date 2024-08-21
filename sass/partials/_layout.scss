@@ -1,5 +1,27 @@
 body {
     main {
+        transition: 0.3s;
+        &.spinner-active {
+            position: relative;
+            pointer-events: none;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); // Color negro semi-transparente
+                z-index: 1;
+            }
+
+            // Asegúrate de que el contenido del main esté por debajo del overlay
+            * {
+                position: relative;
+                z-index: 0;
+            }
+        }
         margin-top: 70px;
         .page-section {
             &:nth-of-type(even) {

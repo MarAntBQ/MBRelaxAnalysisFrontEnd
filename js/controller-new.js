@@ -118,6 +118,16 @@ window.onload = function () {
         });
     });
 
+    document.getElementById("whatsAppButton").addEventListener("click", () => {
+        const data = {
+            name: document.querySelector('input[name="name"]').value
+        };
+        const resultsDisplayer = document.getElementById("results-ctnr");
+        const resultsText = Array.from(resultsDisplayer.querySelectorAll('p')).map(p => p.innerText).join('\n');
+        const message = `Hola mi nombre es ${data.name} y me gustaría recibir más información sobre los resultados de mi test personalizado. Obtuve los siguientes resultados: ${resultsText}`;
+        const whatsappLink = `https://api.whatsapp.com/send?phone=593986347533&text=${encodeURIComponent(message)}`;
+        window.open(whatsappLink, '_blank');
+    });
     document.getElementById("homeButton").addEventListener("click", () => {
         window.location.href = 'https://mbrelax.xyz/contact/';
     });

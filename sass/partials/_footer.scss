@@ -1,0 +1,209 @@
+$this: #{footer};
+#{$this} {
+  h2,
+  p {
+    color: $color-white;
+  }
+  a {
+    color: $color-yellow;
+    text-decoration: none;
+  }
+  .wrapper {
+    @include wrapperSettings;
+    @include break-i {
+      padding: 0 30px;
+    }
+    @include break-m {
+      padding: 0 25px;
+    }
+    @include break-s {
+      padding: 0 20px;
+    }
+  }
+  .#{$this} {
+    &__info,
+    &__copyright {
+      padding: 20px 0;
+      .wrapper {
+        display: flex;
+        justify-content: space-around;
+        @include break-i {
+          flex-wrap: wrap;
+        }
+      }
+    }
+    &__info {
+      padding: 50px 0;
+      background: $color-black;
+      &-box {
+        padding: 0 20px;
+        @include break-i {
+          padding-bottom: 25px;
+        }
+      }
+      h2 {
+        font-family: $normal-font;
+        font-family: 18px;
+      }
+      &-divider {
+        align-items: center;
+        display: flex;
+        margin: 15px 0;
+        .span {
+          &-1,
+          &-2 {
+            background: $color-white;
+            border-radius: 5px;
+          }
+          &-1 {
+            height: 4px;
+            width: 100px;
+          }
+          &-2 {
+            height: 1px;
+            width: 100%;
+          }
+        }
+      }
+      &-logo {
+        margin-bottom: 15px;
+        a {
+          display: block;
+          width: 170px;
+          img {
+            pointer-events: none;
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+      &-text,
+      &-links {
+        font-size: 14px;
+        line-height: 1.5em;
+        padding-right: 30px;
+      }
+      &-text {
+        text-align: justify;
+        &--contacts {
+          font-size: 16px;
+          line-height: 2em;
+          p {
+            display: flex;
+            align-items: center;
+            i {
+              margin-right: 10px;
+            }
+            a {
+                font-weight: bold;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                &:hover {
+                    color: $color-skyblue;
+                }
+            }
+          }
+        }
+      }
+      &-links {
+        font-weight: bold;
+        display: flex;
+        flex-wrap: wrap;
+        p {
+          width: 50%;
+          margin-bottom: 10px;
+          padding-left: 10px;
+          a {
+            &:hover {
+              color: $color-skyblue;
+            }
+          }
+        }
+      }
+      @import 'social-media-links';
+    }
+    &__copyright {
+      background: $color-darkblue;
+      &-info {
+        text-align: center;
+        @include break-i {
+          width: 100%;
+          margin-top: 20px;
+        }
+        a {
+          font-weight: bold;
+          &:hover {
+            color: $color-skyblue;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.wsp-msg {
+    position: fixed;
+    bottom: 22px;
+    right: 60px;
+    padding: 5px 10px;
+    background: #ECE5DD;
+    color: black;
+    border-radius: 10px;
+    font-weight: bold;
+    transform: scale(0);
+    transform: translateX(200px);
+    animation: 3s ease wspdsp;
+  
+    @keyframes wspdsp {
+        0% {
+            transform: translateY(100px) translateX(0px);
+        }
+  
+        50% {
+            transform: translateY(0px)
+        }
+  
+        100% {
+            transform: translateX(200px);
+        }
+    }
+  }
+  
+  .wsp-btn {
+    &,
+    * {
+      transition: 0.5s all;
+    }
+    display: flex;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #25D366;
+    color: white;
+    font-size: 30px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    &:hover {
+      background: #075E54;
+      color: white;
+      i {
+        transform: rotate(15deg);
+      }
+    }
+    transform: translateX(0px);
+    animation: 1s ease wspdsp2;
+    @keyframes wspdsp2 {
+      from {
+        transform: translateX(50px);
+      }
+      to {
+        transform: translateX(0px);
+      }
+    }
+  }

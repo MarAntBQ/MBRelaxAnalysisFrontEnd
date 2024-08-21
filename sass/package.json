@@ -1,0 +1,6 @@
+{
+	"scripts": {
+		"install-sass": "npm install -g sass",
+		"sass": "sass --watch styles.scss ../css/styles.css"
+	}
+}

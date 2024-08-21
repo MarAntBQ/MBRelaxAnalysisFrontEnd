@@ -1,0 +1,21 @@
+#ExamsDisplayer {
+    .past-exam {
+        background: #f0b548;
+        padding: 30px 10px;
+        border-radius: 10px;
+        border: 5px dashed $color1;
+        margin: 15px 0px;
+        color: black;
+        h2 {
+            color: $color1;
+        }
+        p {
+            line-height: 2em;
+            font-size: 18px;
+        }
+        h3 {
+            color: rgb(37, 37, 53);
+            margin: 5px 0px;
+        }
+    }
+}

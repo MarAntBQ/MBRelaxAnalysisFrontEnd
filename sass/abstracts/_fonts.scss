@@ -1,0 +1,24 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+//Fonts
+$normal-font: 'Montserrat', sans-serif;
+$font-headings: Nexa-Bold, sans-serif;
+
+@font-face {
+  font-family: Nexa-Bold;
+  src: url(fonts/Nexa-Bold.otf);
+}
+
+body {
+  font-family: $normal-font;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-headings;
+    color: $color-darkblue;
+  }
+}

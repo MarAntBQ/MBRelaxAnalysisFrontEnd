@@ -1,0 +1,25 @@
+&-social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-right: 30px;
+  margin-top: 15px;
+  a {
+    $iconSize: 40px;
+    $textSize: calcDiv($iconSize, 2);
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    font-size: $textSize;
+    justify-content: center;
+    margin: 5px;
+    @include allHeight($iconSize);
+    @include allWidth($iconSize);
+    background: $color-yellow;
+    color: $color-black;
+    &:hover {
+      background: $color-skyblue;
+      color: $color-white;
+    }
+  }
+}

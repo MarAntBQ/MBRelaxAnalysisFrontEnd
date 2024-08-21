@@ -1,0 +1,23 @@
+@import 'Design-Framework/design-framework';
+
+$color1: #4F772D;
+$color2: #90A955;
+$color-blue: #388DCE;
+$color-darkblue: #1f354a;
+$color-skyblue: #24B4ED;
+$color-black: #323232;
+$color-white: white;
+$color-graylight: #fafafa;
+$color-yellow: #fdd428;
+
+// Abstracts
+@import 'abstracts/_abstracts-dir';
+
+@import 'partials/layout';
+@import 'partials/fonts';
+@import 'partials/header';
+@import 'partials/main';
+@import 'partials/new-test';
+@import 'partials/footer';
+@import 'partials/exams';
+@import 'partials/links';

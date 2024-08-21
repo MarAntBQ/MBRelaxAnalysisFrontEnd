@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
+    <title>MBRelax® | Análisis de Estilo de Vida</title>
+    <link rel="shortcut icon" type="image/png" href="./favicon.png">
+    <script src="js/main.js" defer></script>
+    <script src="js/controller-new.js" defer type="module"></script>
+</head>
+
+<body>
+    <header>
+        <a href="./" class="header-link"><img src="img/header/logo.png" alt="Altura LOGO"></a>
+        <nav>
+            <ul>
+                <i class="fas fa-times" id="close-btn"></i>
+                <li><a href="https://mbrelax.xyz/">Inicio</a></li>
+                <li><a href="https://mbrelax.xyz/about/">¿Quiénes Somos?</a></li>
+                <li><a href="./" class="active">Analisis</a></li>
+                <li><a href="https://mbrelax.xyz/blog/">Blog</a></a></li>
+                <li><a href="https://tienda.mbrelax.xyz/">Tienda</a></a></li>
+                <li><a href="https://mbrelax.xyz/contact/">Contáctanos</a></a></li>
+            </ul>
+        </nav>
+        <i class="fas fa-bars" id="menu-btn"></i>
+    </header>
+    <main>
+      <div class="page-section new-test">
+        <div class="flex-s-a">
+          <div class="box-8 box-i-9 box-m-10 box-p-12 form-ctnr">
+            <div class="form">
+              <!-- Fase 1: Selección de género -->
+              <div id="genderPhase">
+                <h1 class="fs40px w100p mb15px">Nuevo Analisis</h1>
+                <br>
+                <p class="fs18px tac mt5px mb5px tbold">Ingrese su Género</p>
+                <div class="radios-container">
+                  <div class="row-input">
+                    <input type="radio" required name="gender" id="genderMale" value="male">
+                    <label for="genderMale">Masculino</label>
+                  </div>
+                  <div class="row-input">
+                    <input type="radio" required name="gender" id="genderFemale" value="female">
+                    <label for="genderFemale">Femenino</label>
+                  </div>
+                </div>
+                <button type="button" id="nextButton">Siguiente</button>
+              </div>
+
+              <!-- Fase 2: Datos personales -->
+              <div id="personalDataPhase" style="display: none;">
+                <p class="tbold fs20px tac w100p mb15px">Por favor conteste las siguientes preguntas en forma honesta:
+                </p>
+                <hr class="w100p h1px">
+                <form id="personalTest">
+                  <input type="text" placeholder="Ingrese su Nombre" required name="name">
+                  <input type="email" placeholder="Ingrese su Email" required name="email">
+                  <input type="tel" placeholder="Ingrese su número de Teléfono" required name="phone">
+                  <input type="text" placeholder="Ingrese su Dirección" required name="address">
+                  <input type="text" placeholder="Ingrese su Ciudad" required name="city">
+                  <input type="text" placeholder="Ingrese su Provincia" required name="state">
+                  <div id="questions-ctnr"></div>
+                  <div class="row-input">
+                    <input type="checkbox" required id="termsCheckbox">
+                    <label for="termsCheckbox">Acepto los <a href="#" id="termsLink">términos y condiciones</a></label>
+                  </div>
+                  <button type="submit">Enviar</button>
+                </form>
+              </div>
+              <!-- Fase 3: Resultados -->
+              <div id="resultsPhase" style="display: none;">
+                <h1 class="fs40px">Resultados del Análisis</h1>
+                <p class="mt15px fs20px taj">Hemos recibido sus respuestas satisfactoriamente. Tras analizar su estilo de vida, podemos proporcionarle un resultado preliminar sobre el estado de los diferentes sistemas de su organismo, basado en sus respuestas. Un asesor de MBRelax® se pondrá en contacto con usted para ofrecerle un tratamiento adecuado.</p>
+                  <div id="results-ctnr" class="results-systems"></div>
+                  <p class="mt15px fs20px taj">Le recordamos que este análisis no constituye una opinión médica profesional. Los resultados presentados se basan únicamente en los hábitos y respuestas proporcionadas, y no deben ser interpretados como un diagnóstico médico.</p>
+                <button type="button" id="homeButton">Inicio</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="spinner" style="display: none;">
+        <div class="loader"></div>
+      </div>
+    </main>
+    <footer>
+        <span class="wsp-msg"><i class="far fa-comments"></i> ¡Escríbenos!</span>
+<a href="https://api.whatsapp.com/send?phone=593986347533" class="wsp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="footer__info">
+      <div class="wrapper">
+        <div class="footer__info-box box-4 box-i-6 box-m-10 box-p-12">
+          <h2>¿Quiénes somos?</h2>
+          <div class="footer__info-divider">
+            <span class="span-1"></span>
+            <span class="span-2"></span>
+          </div>
+          <div class="footer__info-logo">
+            <a href="./"><img src="./img/brand/logo-white.png" alt="MARBUST WHITE LOGO"></a>
+          </div>
+          <p class="footer__info-text">Somos una empresa dedicada a brindar <strong>servicios digitales</strong> por medio de conocimiento, habilidades y herramientas basadas en la nube.</p>
+          <div class="footer__info-social-links">
+            <a href="https://www.facebook.com/MBRelaxEC" class="fa-brands fa-facebook-f" target="_blank"></a>
+    <a href="https://api.whatsapp.com/send?phone=593986347533" class="fa-brands fa-whatsapp" target="_blank"></a>
+    <a href="https://www.youtube.com/channel/UCdVLdxEW8STQq-IP8HTndag/" class="fa-brands fa-youtube" target="_blank"></a>
+    <a href="https://twitter.com/MarbustTech" class="fa-brands fa-twitter" target="_blank"></a>
+    <a href="https://www.instagram.com/mbrelaxec/" class="fa-brands fa-instagram" target="_blank"></a>
+    <a href="https://www.linkedin.com/company/marbust-technology-company/" class="fa-brands fa-linkedin" target="_blank"></a>
+          </div>
+        </div>
+        <div class="footer__info-box box-4 box-i-6 box-m-10 box-p-12">
+          <h2>Otros Servicios</h2>
+          <div class="footer__info-divider">
+            <span class="span-1"></span>
+            <span class="span-2"></span>
+          </div>
+          <div class="footer__info-links">
+            <p><a href="https://ads.marbust.com/"><i class="fa-solid fa-caret-right"></i> Publicidad</a></p>
+            <p><a href="https://computers.marbust.com/"><i class="fa-solid fa-caret-right"></i> Computadoras</a></p>
+            <p><a href="https://education.marbust.com/"><i class="fa-solid fa-caret-right"></i> Educación</a></p>
+            <p><a href="https://design.marbust.com/"><i class="fa-solid fa-caret-right"></i> Diseño Gráfico</a></p>
+            <p><a href="https://mbhostcloud.xyz/"><i class="fa-solid fa-caret-right"></i> Hospedaje Web</a></p>
+            <p><a href="https://videos.marbust.com/"><i class="fa-solid fa-caret-right"></i> Multimedia</a></p>
+            <p><a href="https://sites.marbust.com/"><i class="fa-solid fa-caret-right"></i> Diseño y Desarrollo Web</a></p>
+            <p><a href="https://writer.marbust.com/"><i class="fa-solid fa-caret-right"></i> Escritura y Periodismo</a></p>
+          </div>
+        </div>
+        <div class="footer__info-box box-4 box-i-6 box-m-10 box-p-12">
+          <h2>Contáctanos</h2>
+          <div class="footer__info-divider">
+            <span class="span-1"></span>
+            <span class="span-2"></span>
+          </div>
+          <div class="footer__info-text footer__info-text--contacts">
+            <p><i class="fa-solid fa-location-dot"></i> Santo Domingo, Ecuador</p>
+            <p><i class="fa-solid fa-phone"></i> <a href="tel:+593986347533">+593 (98) 634 - 7533</a></p>
+            <p><i class="fa-regular fa-envelope"></i> <a href="mailto:Pedidos@MBRelax.xyz">Pedidos@MBRelax.xyz</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright">
+      <div class="wrapper">
+        <div class="footer__copyright-info">
+          <p class="mb10px">With <i class="fas fa-heart"></i> to the <span class="tbold">world</span> from <span class="tbold">Ecuador</span></p>
+          <p class="mb10px"><strong>MBHostCloud&reg;</strong> is a registered trademark in the name of:</p>
+          <!-- Copyright -->
+          <p class="mb10px"><a class="copyrighted-badge" title="Copyrighted.com Registered &amp; Protected" target="_blank" href="https://www.copyrighted.com/work/dB06oQxgfybJuZyU"><img alt="Copyrighted.com Registered &amp; Protected" border="0" width="125" height="25" srcset="https://static.copyrighted.com/badges/125x25/01_1_2x.png 2x" src="https://static.copyrighted.com/badges/125x25/01_1.png" /></a><script src="https://static.copyrighted.com/badges/helper.js"></script></p>
+          <!-- End Copyright -->
+          <p>&copy; 2024 <a href="https://MarBust.com">Marbust Technology Company</a> - All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+    
+      </footer>
+</body>
+</body>
+
+</html>

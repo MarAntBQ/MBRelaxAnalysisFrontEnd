@@ -1,0 +1,40 @@
+@mixin allHeight($measure) {
+  height: $measure;
+  min-height: $measure;
+  max-height: $measure;
+}
+@mixin allWidth($measure) {
+  width: $measure;
+  min-width: $measure;
+  max-width: $measure;
+}
+
+@mixin wrapperSettings {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@mixin scrollBar {
+  scrollbar-width: thin;
+  scrollbar-color: $color-black $color-blue;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $color-black;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-blue;
+  }
+}
+
+@mixin Banner($link, $height) {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: $link;
+  min-height: $height;
+}

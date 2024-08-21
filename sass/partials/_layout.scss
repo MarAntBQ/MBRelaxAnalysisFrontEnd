@@ -1,0 +1,60 @@
+body {
+    main {
+        margin-top: 70px;
+        .page-section {
+            &:nth-of-type(even) {
+                background: #efefef;
+            }
+
+            padding: 64px 10%;
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                text-align: center;
+                color: $color1;
+            }
+
+            hr {
+                margin: 5px auto;
+                border-color: $color2;
+            }
+
+            p {
+                color: #535353;
+
+                strong {
+                    color: #1f1f1f;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $color1;
+                    transition: 0.3s all;
+
+                    &:hover {
+                        color: $color2;
+                    }
+                }
+            }
+        }
+    }
+    scrollbar-width: thin;
+    scrollbar-color: $color1 $color2;
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $color2;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color1;
+        //border-radius: 6px;
+        border: 2px solid $color2;
+    }
+}

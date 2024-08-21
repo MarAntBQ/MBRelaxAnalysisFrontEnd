@@ -1,0 +1,55 @@
+.home-banner {
+    min-height: calc(100vh - 70px);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/banner/home.jpg);
+    padding: 20px 10%;
+    display: flex;
+    //align-items: flex-end;
+    padding-bottom: 30px;
+    .banner-content {
+        //width: 100%;
+        color: white;
+        img {
+            display: block;
+            width: 200px;
+        }
+        .title {
+            margin: 10px 0px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .about {
+            line-height: 2em;
+            text-align: justify;
+            font-size: 18px;
+            padding: 10px 10px 10px 0px;
+            border-radius: 0px 5px 5px 0px;
+        }
+        .links-btns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+            a {
+                display: block;
+                padding: 20px;
+                border: 2px solid white;
+                width: 150px;
+                text-align: center;
+                color: white;
+                text-decoration: none;
+                margin: 5px;
+                border-radius: 25px;
+                font-weight: bold;
+                transition: 0.3s ease;
+                &:hover {
+                    border-color: $color1;
+                    color: $color1;
+                    background: white;
+                }
+            }
+        }
+    }
+}

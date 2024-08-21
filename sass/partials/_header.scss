@@ -1,0 +1,206 @@
+header {
+    background: white;
+    box-shadow: 0 3px 7px 0 rgb(0 0 0 / 12%), inset 0 -1px 0 0 #dadce0;
+    position: fixed;
+    top: 0;
+    min-width: 300px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 70px;
+    min-height: 70px;
+    max-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5px;
+    z-index: 10;
+
+    .header-link {
+        display: block;
+        width: 70px;
+
+        img {
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    #menu-btn {
+        @media (min-width: $break-medium) {
+            display: none;
+        }
+        color: $color1;
+        padding: 10px;
+        font-size: 25px;
+        transition: 0.3s;
+        &:hover {
+            color: $color2;
+            cursor: pointer;
+        }
+    }
+
+    nav {
+        @media (max-width: $break-medium) {
+            display: none;
+        }
+        #close-btn {
+            @media (min-width: $break-medium)  {
+                display: none;
+            }
+        }
+        ul {
+            display: flex;
+            list-style: none;
+
+            li {
+                a {
+                    color: $color1;
+                    text-align: center;
+                    text-decoration: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 10px 20px;
+                    margin: 0px 5px;
+                    transition: 0.3s;
+                    font-weight: bold;
+
+                    &:hover, &.active {
+                        color: $color2;
+                        &::after {
+                            opacity: 1;
+                            top: 7px;
+                        }
+                    }
+                    &::after {
+                        content: '';
+                        height: 3px;
+                        width: 100%;
+                        display: block;
+                        background: $color2;
+                        position: relative;
+                        border-radius: 5px;
+                        top: 15px;
+                        transition: 0.3s;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@mixin Menu-Mobile-Setup {
+    display: block;
+    z-index: 12;
+    position: fixed;
+    max-width: 300px;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: white;
+    overflow-y: auto;
+    list-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: $color1 $color2;
+    box-shadow: 0 3px 7px 0 rgb(0 0 0 / 12%), inset 0 -1px 0 0 #dadce0;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $color2;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color1;
+        //border-radius: 6px;
+        //border: 3px solid $color3;
+    }
+
+    #close-btn {
+        color: $color1;
+        padding: 10px;
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        //margin-left: auto;
+        /*margin-right: 5px;*/
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            //transform: rotate(360deg);
+            color: $color2;
+        }
+    }
+
+    ul {
+        flex-wrap: wrap;
+    }
+
+    li {
+        width: 100%;
+        a {
+            //display: block;
+            text-align: center;
+            justify-content: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            //border: 1px solid #111111;
+            margin: 5px 0px;
+            text-align: center;
+            transition: 0.3s;
+            color: $color1;
+            border-radius: 0px;
+            &:hover,
+            &.link-active {
+                //border: 1px solid $headerlinec;
+                //background: $c;
+                color: $color2;
+            }
+        }
+    }
+}
+
+@media (max-width: $break-medium) {
+    .active-menu {
+        @include Menu-Mobile-Setup;
+        animation: 0.5s appearmenu ease;
+        transform: translateX(0px);
+
+        @keyframes appearmenu {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0px);
+            }
+        }
+    }
+
+    .desactivate-menu {
+        animation: 0.5s dappearmenu ease;
+        transform: translateX(-100%);
+
+        @keyframes dappearmenu {
+            from {
+                transform: translateX(0px);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    }
+}

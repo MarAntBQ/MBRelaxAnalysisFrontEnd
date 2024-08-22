@@ -49,13 +49,8 @@
                     margin: 0;
                     text-align: center;
                     cursor: pointer;
-                    font-size: 30px;
+                    //font-size: 30px;
                     padding: 50px;
-                    position: relative; // Asegura que el input esté posicionado correctamente
-                    z-index: 1; // Asegura que el input esté por encima de otros elementos
-                    &[type="radio"] {
-                        transform: scale(1.1);
-                    }
                 }
                 
                 label {

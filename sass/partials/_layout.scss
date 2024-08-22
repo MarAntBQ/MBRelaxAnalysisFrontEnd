@@ -29,6 +29,9 @@ body {
             }
 
             padding: 64px 10%;
+            @media (max-width: 500px) {
+                padding: 35px 10px;
+            }
 
             h1,
             h2,

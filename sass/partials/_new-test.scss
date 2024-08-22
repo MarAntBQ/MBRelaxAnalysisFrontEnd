@@ -26,13 +26,14 @@
                 justify-content: center;
             }
             .row-input {
-                display: flex;
-                //justify-content: flex-start;
-                align-items: center;
+                // display: flex;
+                // //justify-content: flex-start;
+                // align-items: center;
                 //width: 50%;
                 transition: 0.3s;
                 margin: 10px 5px;
                 font-size: 25px;
+                //padding: 15px;
                 //border-bottom: 0.5px solid rgba(0, 166, 81, 0.14);
                 cursor: pointer;
                 color: $color1;
@@ -42,37 +43,22 @@
                 }
                 
                 input {
-                    display: block;
-                    width: 40px;
-                    min-width: 40px;
-                    max-width: 40px;
-                    margin: 0;
-                    text-align: center;
-                    cursor: pointer;
-                    //font-size: 30px;
-                    padding: 50px;
+                    width: unset;
+                    // display: block;
+                    // width: 40px;
+                    // min-width: 40px;
+                    // max-width: 40px;
+                    // margin: 0;
+                    // text-align: center;
+                    // cursor: pointer;
+                    // //font-size: 30px;
+                    // padding: 50px;
                 }
                 
                 label {
                     cursor: pointer;
                     font-weight: bold;
-                    padding: 10px;
-                    display: inline-block; // Asegura que el label sea un bloque en línea
-                    position: relative; // Asegura que el label esté posicionado correctamente
-                    z-index: 0; // Asegura que el label esté por debajo del input
-                    //width: 100%; // Puedes descomentar esto si necesitas que el label ocupe todo el ancho
-                }
-                
-                // Asegura que el área de clic del input sea más grande
-                input[type="radio"] + label {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 10px;
-                    width: auto; // Ajusta el ancho según sea necesario
-                    height: auto; // Ajusta la altura según sea necesario
-                    position: relative;
-                    z-index: 0;
+                    margin-left: 3px;
                 }
             }
             button {

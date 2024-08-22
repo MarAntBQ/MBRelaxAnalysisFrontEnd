@@ -41995,13 +41995,13 @@ header nav ul li a::after {
   margin: 0;
   text-align: center;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
   padding: 50px;
   position: relative;
   z-index: 1;
 }
 .new-test .form-ctnr .form .row-input input[type=radio] {
-  transform: scale(2.5);
+  transform: scale(1.1);
 }
 .new-test .form-ctnr .form .row-input label {
   cursor: pointer;

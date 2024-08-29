@@ -1,7 +1,7 @@
 const localServer = 'http://190.110.54.245:8090'
-const prodServer = 'https://v2.accounts.marbust.com';
+const prodServer = 'https://api.accounts.marbust.com';
 function loadQuestions(gender) {
-    return fetch(`${prodServer}/api/mbrelax/questions/${gender}`)
+    return fetch(`${prodServer}/mbrelax/questions/${gender}`)
         .then(response => response.json())
         .then(json => {
             const QuestionsDisplayer = document.getElementById("questions-ctnr");
@@ -80,7 +80,7 @@ window.onload = function () {
         document.getElementById("spinner").style.display = "block";
         document.querySelector("main").classList.add("spinner-active");
 
-        fetch(`${prodServer}/api/mbrelax/calculate`, {
+        fetch(`${prodServer}/mbrelax/calculate`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
